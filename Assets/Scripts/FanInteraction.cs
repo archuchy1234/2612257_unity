@@ -17,7 +17,7 @@ public class FanInteraction : MonoBehaviour
 
         if (isOn)
         {
-            // Rotate the whole fan object
+           
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
     }

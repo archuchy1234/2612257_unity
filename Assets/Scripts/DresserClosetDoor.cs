@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DresserClosetDoor : MonoBehaviour
 {
-    public KeyCode interactKey = KeyCode.J;   // Key to toggle dresser door
-    public float openAngle = 90f;             // How far the door swings
-    public float openSpeed = 2f;              // Speed of rotation
+    public KeyCode interactKey = KeyCode.J;   
+    public float openAngle = 90f;             
+    public float openSpeed = 2f;              
 
     private bool isOpen = false;
     private Quaternion closedRotation;
@@ -12,9 +12,9 @@ public class DresserClosetDoor : MonoBehaviour
 
     void Start()
     {
-        // Save the starting rotation
+      
         closedRotation = transform.localRotation;
-        // Define the open rotation (rotate around Y axis)
+       
         openRotation = Quaternion.Euler(transform.localEulerAngles + new Vector3(0, openAngle, 0));
     }
 
@@ -25,7 +25,6 @@ public class DresserClosetDoor : MonoBehaviour
             isOpen = !isOpen;
         }
 
-        // Smoothly rotate between closed and open
         if (isOpen)
             transform.localRotation = Quaternion.Slerp(transform.localRotation, openRotation, Time.deltaTime * openSpeed);
         else

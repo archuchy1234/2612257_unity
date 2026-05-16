@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class LampInteraction : MonoBehaviour
 {
-    public KeyCode toggleKey = KeyCode.L; // Key to toggle lamp
+    public KeyCode toggleKey = KeyCode.L; 
     private Light lampLight;
-    private bool isOn = false; // start OFF
+    private bool isOn = false; 
 
     void Start()
     {
-        // Get the Light component attached to this GameObject
+        
         lampLight = GetComponent<Light>();
 
         if (lampLight == null)
@@ -17,7 +17,7 @@ public class LampInteraction : MonoBehaviour
             return;
         }
 
-        // Ensure lamp starts OFF
+      
         lampLight.enabled = false;
     }
 
@@ -28,7 +28,7 @@ public class LampInteraction : MonoBehaviour
         if (Input.GetKeyDown(toggleKey))
         {
             isOn = !isOn;
-            lampLight.enabled = isOn; // switch lamp on/off
+            lampLight.enabled = isOn; 
         }
     }
 }
